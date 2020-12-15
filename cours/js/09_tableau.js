@@ -29,7 +29,19 @@ for(var i=0;i<chiffres.length;i++){
 }
 
 
-// var fruits=['Mangue','Fraise','Figue','Kiwi'];
-// Ecrire un programme qui affiche la liste des fruits présent dans le tableau, puis demander a l'utilsateur de tappez un nom de fruits et verifié est ce qu'il existe dans la liste ou non, si existe affiché disponible si non vous affichez indisponible
-var fruits=["Mangue","Fraise","Figue","Kiwi"];
+document.write("<h4>-------Quelques fonctions sur les tableaux---------</h4>")
+//quelques fonctions sur les tableaux
+var tabs=['Mathilde','Rafael'];
+//la fonction push(), ajoute un élement a la fin du tableau
+tabs.push("Ahmad");
+tabs.push("Alexandre");
+console.log(tabs);
+//la fonction pop(), permet de retirer le dernier élement du tableau
+tabs.pop();
+console.log(tabs);
+//la fonction shift(), permet du retirer le premier élement du tableau
+tabs.shift();
+console.log(tabs);
+
+
 
