@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenement</title>
+    <style>
+        h1 {
+            background-color: lightseagreen;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #carre {
+            width: 100px;
+            height: 100px;
+            background-color: lightseagreen;
+        }
+
+        #valider {
+            background-color: lightseagreen;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Les événements Javascript</h1>
+    <div id="carre"></div>
+    <hr>
+    <form action="">
+        <input type="text" id="champ" value=""><br><br>
+        <input type="submit" id="valider" value="valider">
+    </form>
+
+
+    <script>
+        /*
+        Plusieurs facons de mettre en place un événement
+        ------------------------------------------------
+        1. en mettant un attribut d'événement sur la balise directement.
+        ex: <div onclick=".....code....."></div>
+        2. en récupérant l'élément pour lui mettre un événement
+        ex: document.getElementById("truc").onclick = function(){
+            ...code....
+        }
+        3. en récupérant l'élément pour lui mettre un écouteur d'événement (Bonne partique consillée par la documentation javascript)
+        ex: document.getElementById("truc").addEventListener("click", function(){...code...})
+        */
+
+        //sur mon événment caree, vous allez changez la couleur à l'événement mousove
+
+
+        var monCarre = document.getElementById("carre");
+        monCarre.addEventListener("click", function(){
+            monCarre.style.backgroundColor = "red";
+            monCarre.style.border= "2px solid blue";
+        })
+
+        var validation = document.getElementById("valider");
+        validation.addEventListener("click", function(e){
+             e.preventDefault();//le e represente l'evenement et la fonction preventDefault va bloquer l'evenement , cela empechera le rafraichissement de la page. car quand la page se rafrachi au clic, elle perd l'information contenu dans le champ input.
+            alert(document.getElementById("champ").value);
+        })
+
+    </script>
+</body>
+</html>

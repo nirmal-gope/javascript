@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        h1{
+            text-align: center;
+            padding: 10px;
+            background-color: midnightblue;
+            color: white;
+        }
+        #rouge,.bleu,#vert{
+            width: 150px;
+            height: 150px;
+        }
+        #rouge{
+            background-color: red;
+        }
+        .bleu{
+        background-color: blue;
+        }
+        #vert{
+        background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Le Document Object Model</h1>
+    <div id="rouge"></div>
+    <div class="bleu"></div>
+    <div id="vert"></div>
+
+
+    <script>
+        console.info(document);
+
+        var bleu = document.getElementsByClassName("bleu") [0];
+        console.log(bleu);
+
+        for(var i in bleu){
+            document.write(i+ " : "+ bleu[i]+ "<br>");
+            console.log(i);
+            //boucle qui permet de voir les nomnres de l'objet.
+        }
+
+    </script>
+    
+</body>
+</html>

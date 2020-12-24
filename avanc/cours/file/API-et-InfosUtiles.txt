@@ -1,0 +1,41 @@
+Reference Javascript :	
+> https://developer.mozilla.org/fr/docs/JavaScript/Reference
+> http://msdn.microsoft.com/en-us/library/ie/yek4tbz0%28v=vs.94%29.aspx
+
+Le DOM référence des éléments HTML (en tant qu'objets)
+> http://msdn.microsoft.com/en-us/library/ie/hh772960%28v=vs.85%29.aspx
+
+Référence de l'ensemble du DOM (sauf les éléments HTML), Objets window, document etc ... events, methods etc ..
+> http://msdn.microsoft.com/en-us/library/ie/hh772384%28v=vs.85%29.aspx
+	
+Les bonnes pratiques JQuery, les pratiques professionelles :
+> http://lab.abhinayrathore.com/jquery-standards/
+> https://drupal.org/node/1720586
+	
+Liste des selecteurs JQuery mise à jour :
+> http://www.w3schools.com/jquery/jquery_ref_selectors.asp
+	
+Pour tester la performance de son script
+> http://jsperf.com/
+> http://tools.pingdom.com/fpt/
+> https://developers.google.com/speed/pagespeed/insights/
+> http://www.willpeavy.com/minifier/
+> http://www.yann.com/fr/optimiser-la-configuration-dapache-20/05/2011.html
+
+POUR LE DESIGN ! (icones en SVG etc ...) :
+> http://www.web-imaginative.com/blog-imaginative/tutoriels/
+
+Icones svg :
+> https://useiconic.com/
+
+COMPATIBILITÉ POUR TOUS LES NAVIGATEURS MEME ANCIENS :
+> https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills 
+
+Veille JS :
+http://codepen.io/sniejadlik/pen/CIvGa
+https://www.g-star.com/en_nl/newdenimarrivals
+http://i-remember.fr/
+http://takethethrone.com/
+
+	
+	
