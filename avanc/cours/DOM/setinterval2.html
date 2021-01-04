@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval 2</title>
+</head>
+<body>
+    <img src="img/image1.jpg" id="monImage" width="100%" alt="image1">
+
+    <script>
+        var img =1;
+        function f(){
+            img+=1;
+            monImage.setAttribute("src", "img/image" + img + ".jpg");
+            if(img==5){
+                clearInterval(timer);
+            }
+        }
+        var timer = window.setInterval("f()", 3000); // Toutes les 3000 secondes, on changera d'image
+    </script>
+    
+</body>
+</html>

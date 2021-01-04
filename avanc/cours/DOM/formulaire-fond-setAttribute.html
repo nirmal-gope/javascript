@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire fond setAttribute</title>
+</head>
+<body>
+    <h2>Input type text</h2>
+    <form action="">
+        <input type="text" id="fond" placeholder="Saisir un code couleur hexadécimal" maxlength="6">
+        <input type="submit">
+    </form>
+
+    <hr>
+    <h2>Autre type d'input</h2>
+    <h3>Choisissez une couleur et essayez la</h3>
+    <input type="color" name="color" id="myColor">
+    <button onclick="myFunction()">Essayer</button>
+
+
+    <script>
+        //EXERCICE: Au click sur le bouton submit, Affichez la saisie du formulaire dans une alert et appliquez cette couleur au background du body.
+
+        document.querySelector('form').addEventListener("submit", function(e){
+        e.preventDefault(); //annule le rechargement de la page.
+        alert(fond.value);
+        document.getElementsByTagName("body")[0].setAttribute("style", "background:#" + fond.value + ";");
+        })
+        //autre possibilité: document.body.setAttribute("style", "background:#" + fond.value + ";"); 
+
+        //.....................................................
+        function myFunction(){
+            console.log(myColor.value);
+            document.getElementsByTagName("body")[0].setAttribute("style", "background:" + myColor.value + ";");
+        }
+
+
+    </script>
+    
+</body>
+</html>

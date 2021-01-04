@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déplacement</title>
+    <style>
+        section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .rose {
+            position: relative;
+            background-color: pink;
+            width: 50px;
+            height: 20px;
+            border: 3px solid black;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="deplacement();">Déplacement</button>
+    <section>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+    </section>
+
+    <script>
+        function deplacement() {
+            var mesCarresRoses = document.getElementsByClassName('rose');
+            console.log(mesCarresRoses); // html collection (length de 8)
+            //Faites descendre les elements pairs de 50px au click sur le bouton "déplacement"
+            //boucle for et modulo sont vos amis (FOREVER)
+            for (var i = 0; i < mesCarresRoses.length; i++) {
+                if (i % 2 === 0) {
+                    mesCarresRoses[i].style.top = "50px";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img onclick="tourneImage();" id="carousel" src="img/1.jpg" alt="image1">
+    </div>
+
+    <hr>
+
+    <section class="carousel2">
+        <h2>Autre méthode</h2>
+        <img class="changeImage" src="img/image1.jpg" alt="image1" id="imageCarousel">
+        <br>
+        <button class="changeImage">Tourner</button>
+    </section>
+    <script>
+        //Créez la fonction tourneImage() qui change la src des images en utilisant la condition switch
+        function tourneImage(){
+            var monImage = document.getElementById("carousel").getAttribute("src");
+            switch(monImage){
+                case "img/1.jpg":
+                    document.getElementById("carousel").src = "img/2.jpg";
+                    break;
+                case "img/2.jpg":
+                    document.getElementById("carousel").src = "img/3.jpg";
+                    break;
+                case "img/3.jpg":
+                    document.getElementById("carousel").src = "img/4.jpg";
+                    break;
+                case "img/4.jpg":
+                    document.getElementById("carousel").src = "img/5.jpg";
+                    break;
+                case "img/5.jpg":
+                    document.getElementById("carousel").src = "img/6.jpg";
+                    break;
+                case "img/6.jpg":
+                    document.getElementById("carousel").src = "img/1.jpg";
+                    break;
+            }
+
+        }
+
+        //Méthode 2
+        var changeImage = document.querySelectorAll(".changeImage");
+        console.log(changeImage); //NodeList[0]
+
+        changeImage.forEach(element =>{
+            var i = 2; //valeur de départ
+
+            element.addEventListener("click", function(){
+                document.getElementById("imageCarousel").setAttribute("src", "img/image"+ i + ".jpg"); //on modifie l'attribut src en remplacant le chiffre par i
+
+                if(i==5){
+                    i=0;
+                }
+                i++; //on incrémente
+                console.log("tour: " + i +" : "+ document.getElementById("imageCarousel").src);
+            })
+        })
+
+    </script>
+</body>
+</html>

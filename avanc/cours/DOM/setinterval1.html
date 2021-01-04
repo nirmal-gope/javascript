@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval 1</title>
+    <style>
+        #div {
+            border: 5px solid greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+
+    <script>
+        var hauteur = 0;
+        function f(){
+            hauteur +=5; //on augmente de 5 en 5
+            div.setAttribute("style", "height:" + hauteur + "px");
+            console.log(hauteur);
+            if(hauteur==500){
+                clearInterval(timer);
+            }
+        }
+        var timer = window.setInterval("f()", 100); //La méthode setInterval nous permet d'exécuter une fonction de manière répétée. En 1er arg on a la fonction à repeter. En 2eme argument: le temps entre chaque répétition.
+
+        // Il existe setTimeOut: qui va exécuter une fonction au bout d'un délai précisé en  2eme argument. en milisecondes
+    </script>
+    
+</body>
+</html>
