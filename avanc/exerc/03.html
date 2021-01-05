@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie</title>
+    <style>
+        h2 {margin: 50px; font-family:monospace; font-size: 40px; text-align: center;}
+        #container {margin: 0 auto; display: flex; text-align: center; border: 2px solid black;}
+        #stream {width: 1200px; height: 900px; background-color: rgb(152, 240, 255); display: flex; align-items: center; justify-content: center;}
+        figure {position : relative;}
+        #bigimage {box-sizing: content-box; border: 7px solid black;}
+        #legendary {width: 100%; height: 50px; text-align: center; line-height: 50px; font-size: 25px; color: white; background-color: rgba(0, 0, 0, 0.8); position: absolute; bottom: 4px;}
+        #mini {width: 600px; height: 900px; display: flex; flex-flow: column wrap; align-items: center; justify-content: center; background-color: rgb(152, 152, 255);}
+        #mini img {width: 150px; height: 150px; padding: 10px;}
+    </style>
+</head>
+
+<body>
+    <h2>GALERIE</h2>
+    <div id="container">
+        <div id="stream">
+            <figure>
+                <img src="img/image1.jpg" alt="Avengers" title="Avengers" id="bigImage"/>
+                <figcaption id="legendary">Avengers</figcaption>
+            </figure>
+        </div>
+        <div id="mini">
+            <a href="#"><img class="mini" src="img/image1.jpg" alt="Avengers" title="Avengers"/></a>
+            <a href="#"><img class="mini" src="img/image2.jpg" alt="Legende 2" title="Legende 2"/></a>
+            <a href="#"><img class="mini" src="img/image3.jpg" alt="Legende 3" title="Legende 3"/></a>
+            <a href="#"><img class="mini" src="img/image4.jpg" alt="Legende 4" title="Legende 4"/></a>
+            <a href="#"><img class="mini" src="img/image5.jpg" alt="Legende 5" title="Legende 5"/></a>
+            <a href="#"><img class="mini" src="img/image6.jpg" alt="Legende 6" title="Legende 6"/></a>
+            <a href="#"><img class="mini" src="img/image7.jpg" alt="Legende 7" title="Legende 7"/></a>
+            <a href="#"><img class="mini" src="img/image8.jpg" alt="Legende 8" title="Legende 8"/></a>
+            <a href="#"><img class="mini" src="img/image9.jpg" alt="Legende 9" title="Legende 9"/></a>
+            <a href="#"><img class="mini" src="img/image10.jpg" alt="Legende 10" title="Legende 10"/></a>
+        </div>
+    </div>
+
+    <script>
+        var mesMinis = document.querySelectorAll(".mini");
+        //Pour boucler sur des éléments qui ont le meme nom de classe, on utilise querySelectorAll 
+        for(var i=0; i < mesMinis.length; i++) {
+            var monImage = document.getElementById('bigImage');
+            mesMinis[i].addEventListener('click', function() {
+                monImage.src = this.src; //this = mesMini[i]
+            })
+        }
+    </script>
+</body>
+</html>

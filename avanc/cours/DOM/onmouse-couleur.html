@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            height: 200px;
+            width: 300px;
+            border: 2px solid black;
+            margin: 30px 0;
+        }
+        
+    </style>
+    <title>onmouse couleur</title>
+</head>
+<body>
+    <div id="maDiv"></div>
+
+    <script>
+        //ICI Cest A TOI DE JOUER !
+        // au survol, la div change de couleur
+        // onmouseout, la div prend une autre couleur
+
+        document.getElementById("maDiv").onmouseover = function() {
+            this.style.backgroundColor = "#336699";
+        }
+        document.getElementById("maDiv").onmouseout = function() {
+            this.style.backgroundColor = "deeppink";
+        }
+
+        /*
+        VERSION avec addEventListener
+
+        var changeColor = document.getElementById("maDiv");
+        changeColor.addEventListener('mouseover', function(){
+            changeColor.style.backgroundColor = "#F1D4AF";
+        })
+        changeColor.addEventListener('mouseout', function(){
+            changeColor.style.backgroundColor = "#C5E0DC";
+        })
+        */
+
+    </script>
+</body>
+</html>

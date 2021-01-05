@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Content</title>
+</head>
+<body>
+    <h1>Liste de courses</h1>
+    <ul>
+        <li>Lait</li>
+        <li>Formage</li>
+        <li>Oeufs</li>
+    </ul>
+    <button id="changer">Changer</button>
+
+    <script>
+        //Erercice: Au click sur le bouton, l'élément "Lait" de la liste doit changer en "Jus d'orange". Vous devrez créer une fonction qui comprendra en argument le nouvel élément et vous devrez utiliser textContent
+
+        //Quand je clique sur le bouton changer, cela declenche ma fonction changerContenu et l'argument de cette fonction remplacera le mot LAIT de la liste.
+
+        function changerContenu(arg){
+            document.getElementsByTagName("li")[0].textContent = arg;
+       }
+       document.getElementById("changer").addEventListener("click", function(){
+           changerContenu("Jus d'orange");
+       })
+
+       /*
+       Autre façon de créer un événement: 
+       document.getElementById("changer").onclick= function(){
+           changerContenu("Jus d'orange");
+       }
+       */
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de saisie</title>
+</head>
+<body>
+    <h1>Controle de saisie</h1>
+    <form name="formulaire">
+        <label for="pseudo">Pseudo</label> <br>
+        <input type="text" name="pseudo" id="pseudo"><br>
+        <label for="mdp">Mot de passe</label><br>
+        <input type="password" name="mdp" id="mdp"><br>
+        <input type="submit" value="ok" name="ok" onclick="resultat()">
+    </form>
+
+    <script>
+        function resultat() {
+            if(document.formulaire.pseudo.value.length < 5 || document.formulaire.pseudo.value.length > 15) {
+                alert("Le pseudo doit avoir entre \n 5 et 15 caractères inclus");
+            }
+
+            //EXERCICE 1: Faire de meme pour le mot de passe
+            //EXERCICE 2: Si les pseudo et mdp sont bien inférieurs à 15 et bien sup à 5, alors on les affiche dans une alert.
+            if(document.formulaire.mdp.value.length < 5 || document.formulaire.mdp.value.length > 15) {
+                alert("Le mot de passe doit avoir entre \n 5 et 15 caractères inclus");
+            }
+
+            if(document.formulaire.pseudo.value.length >= 5 && document.formulaire.pseudo.value.length <= 15 && document.formulaire.mdp.value.length >= 5 && document.formulaire.mdp.value.length <= 15){
+                alert("Votre pseudo est: " + document.formulaire.pseudo.value + "\n Votre mdp est: " + document.formulaire.mdp.value);
+            }
+    }
+    </script>
+    
+</body>
+</html>

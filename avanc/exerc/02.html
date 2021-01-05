@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th {border: 2px solid green;padding: 5px;           border-collapse: collapse;}
+        table {width: 420px;}
+        tr {padding: 5px;}
+        input {margin: 10px;            width: 200px;}
+        div { width: 700px;            margin: 10px auto;}
+        label {display: inline-block; width: 200px;}
+        div.move {position: relative; border: 2px solid; background: green; height: 100px; width: 100px;            margin: 20px 0;}
+        h2 { margin: 20px 0;}
+        #move1 { background: blue;}
+    </style>
+</head>
+<body>
+<h2>Tableau de calcul</h2>
+
+<div>
+    <label for="nombre">Saisissez un nombre</label>
+    <input id="nombre" type="text">
+    <br>
+    <table>
+        <tr>
+            <th>nombre</th>
+            <th>carré</th>
+            <th>cube</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<hr>
+<h2>Copieur</h2>
+
+<div>
+    <label for="texte">Votre texte ici</label>
+    <input id="texte" type="text">
+    <br>
+    <label for="copie">La copie ici</label>
+    <input id="copie" type="text">
+</div>
+<hr>
+
+<script>
+    //Copieur
+    var texte = document.getElementById('texte'),
+        copie = document.getElementById("copie");
+
+    texte.addEventListener('keyup', function(){
+        copie.value = texte.value;
+    })
+
+    /*
+    SYNTAXE DU ADDEVENTLISTENER
+    Surquoijemetsunevenement.addEventListener("levenement", function(){
+
+    })
+    */
+
+    // Tableau de calcul
+
+    var nombre = document.getElementsByTagName('td')[0],
+        carre = document.getElementsByTagName('td')[1],
+        cube = document.getElementsByTagName('td')[2],
+        saisi = document.getElementById('nombre');
+
+        saisi.addEventListener("keyup", function(){
+            nombre.innerHTML = saisi.value;
+            var chiffre = parseInt(nombre.innerHTML);
+            if(!isNaN(chiffre)) {
+                carre.innerHTML = chiffre * chiffre;
+                cube.innerHTML = chiffre * chiffre * chiffre;
+            }
+        })
+
+</script>
+</body>
+</html>

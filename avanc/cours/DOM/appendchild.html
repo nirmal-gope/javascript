@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppendChild</title>
+</head>
+<body>
+    <h1>CreateTextNode et AppendChild</h1>
+    <p>CreateTextNode = Va créer nouveau noeud de texte</p>
+    <button onclick = "addTextNode('YES !')">YES !</button>
+    <button onclick = "addTextNode('NON !')">NON !</button>
+    <button onclick = "addTextNode('BING')">BING</button>
+    <button id="bouton">Cliquez</button>
+
+    <p id="p1">Premiere ligne de mon paragraphe</p>
+
+    <script>
+        function addTextNode(text){
+            //fonction qui attend un argument text
+            var newText = document.createTextNode(text);
+            var p1 = document.getElementById("p1");
+
+            p1.appendChild(newText); // avec la methode appendChild, on va ajouter le nextext à notre p1
+        }
+
+        function myFunction(){
+            var z = document.createElement("h3"); //j'ai crée mon h3
+            var a = document.createTextNode("j'ai réussi !!!!"); //j'ai crée mon texte
+
+            z.appendChild(a); //j'ai ajouté le texte à mon h3
+            document.body.appendChild(z); // j'ai ajouté mon h3 au body
+        }
+        document.getElementById("bouton").addEventListener("click", function(){
+            myFunction();
+        })
+
+    </script>
+    
+</body>
+</html>

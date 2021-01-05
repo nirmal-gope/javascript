@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculatrice + et - </title>
 </head>
-
 <body>
     <h1>Ma Premiere calculatrice</h1>
     <h2>Elle ne sait qu'additionner et soustraire</h2>
@@ -14,10 +12,34 @@
         <input type="text" name="saisie1" placeholder="Saisie 1">
         <input type="text" name="operateur" placeholder="+ ou -">
         <input type="text" name="saisie2" placeholder="Saisie 2">
-        <input type="submit" onclick="calcul()">
+        <input type="submit" id="submit__button">
     </form>
 
+    <div id="result"></div>
+
     <script>
+        function calcul() {
+            var saisie1 = parseInt(document.formulaire.saisie1.value); // On récupère la valeur du premier champ input
+            var saisie2 = parseInt(document.formulaire.saisie2.value);
+            var operateur = document.formulaire.operateur.value;
+
+            if(operateur == "+") {
+                resultat = saisie1 + saisie2;
+            } else if(operateur == "-"){
+                resultat = saisie1 - saisie2;
+            }
+
+            // alert("Resultat: " + resultat);
+
+            document.querySelector("#result").innerHTML = "Resultat: " + resultat;
+
+        };
+
+        document.querySelector("#submit__button").addEventListener("click", function(event) {
+            event.preventDefault();
+            calcul();
+        });
+
 
     </script>
 </body>
